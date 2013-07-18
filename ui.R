@@ -85,10 +85,10 @@ shinyUI(pageWithSidebar(
                             "homecourt gives a 2.5 point advantage.")
     ),
     
-#     tags$br(),
-#     tags$p("View the",
-#           tags$a(href = "https://github.com/ccagrawal/tennis-sim", "source code"),
-#           "on GitHub."),
+    tags$br(),
+    tags$p("View the",
+          tags$a(href = "https://github.com/ccagrawal/tennis-sim", "source code"),
+          "on GitHub."),
     
     tags$br(),
     tags$h5(textOutput("count"))
