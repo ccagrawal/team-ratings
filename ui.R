@@ -80,14 +80,14 @@ shinyUI(pageWithSidebar(
                      tags$br(),
                      tags$p("Some NBA homecourts are more beneficial than others.",
                             "Here are NBA teams' regular season homecourt advantages",
-                            "-- measured in points -- over the past 10 years. For",
-                            "example a team with a Homecourt rating of 2.5 means",
-                            "homecourt gives a 2.5 point advantage.")
+                            "-- measured in points -- over the past 10 years. The",
+                            "Brooklyn Nets are not included because of their extremely",
+                            "small sample size.")
     ),
     
     tags$br(),
     tags$p("View the",
-          tags$a(href = "https://github.com/ccagrawal/tennis-sim", "source code"),
+          tags$a(href = "https://github.com/ccagrawal/team-ratings", "source code"),
           "on GitHub."),
     
     tags$br(),

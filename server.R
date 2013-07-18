@@ -52,7 +52,9 @@ shinyServer(function(input, output) {
     sport <- "NBA"
     
     homeDataSet <- read.csv(paste("~/ShinyApps/team-ratings/Data/", sport, "_Home.csv", sep = ""), header = TRUE, sep = ",")
-    sportMin <- floor(min(homeDataSet$Lower.Bound)/2) * 2
+    homeDataSet <- homeDataSet[-which(homeDataSet$Team == "Brooklyn Nets"), ]
+#    sportMin <- floor(min(homeDataSet$Lower.Bound)/2) * 2
+    sportMin <- 0
     sportMax <- ceiling(max(homeDataSet$Upper.Bound)/2) * 2
     
     if (input$sortHome == "rating") {
@@ -63,7 +65,7 @@ shinyServer(function(input, output) {
     h3$chart(borderWidth = 0, height = 800, width = 760)
     
     h3$title(text = paste(sport, " Team Homecourt Advantages", sep = ""))
-    h3$yAxis(title = list(text = "Homecourt Benefit (Points)"), tickInterval = 2, min = sportMin, max = sportMax)
+    h3$yAxis(title = list(text = "Homecourt Benefit (Points)"), tickInterval = 1, min = sportMin, max = sportMax)
     
     h3$tooltip(shared = TRUE)
     h3$legend(enabled = FALSE)
